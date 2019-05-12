@@ -14,19 +14,3 @@ xhr.send();
    document.getElementById('ipsum').innerHTML = xhr.responseText;
  }  
  }
-
-function initPage(){
-xhr = new XMLHttpRequest();
-xhr.open('get', 'getLangues', true);
-xhr.onload = makeSelect;
-xhr.send();
-}
-function makeSelect(){
-var lng = JSON.parse(xhr.responseText);
-var liste = '';
-for(var i in lng){
-liste += '<option value=' + lng[i].id + '>'
-+ lng[i].lib + '</option>';
-}
-setElem('lang', liste);
-}
